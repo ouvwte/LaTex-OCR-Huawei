@@ -41,5 +41,5 @@ As part of this assignment, we successfully fine-tuned the VLM model for recogni
 
 ## 5. Links
 
-- repository: `https://github.com/ouvwte/Recognizing-handwritten-mathematical-formulas-in-LaTeX`
-- Model (checkpoint): `https://huggingface.co/ваш-username/latex-ocr-smolvlm`  
+- repository: `https://github.com/ouvwte/LaTex-OCR-Huawei`
+- Model (checkpoint): `https://huggingface.co/danilb575/Case_10_model`  
