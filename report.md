@@ -33,7 +33,7 @@ Metrics calculated on 30 test examples.
 
 ## 3. Демонстрация работы приложения
 
-Screenshots confirming the functionality of the developed Streamlit application are located in screenshots/ folder of the repository.
+Screenshots confirming the functionality of the developed Streamlit application are located in `screenshots/` folder of the repository.
 
 ## 4. Conclusion
 
