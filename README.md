@@ -70,7 +70,7 @@ Developed with **Streamlit**. Features:
 The trained model is available at this link:  
 [Hugging Face](https://huggingface.co/danilb575/Case_10_model)
 
-> The archive with the checkpoint is also available at [link to Google Drive]([https://drive.google.com/...](https://drive.google.com/drive/folders/1gZL4MaXLi-B4NrK8TgpAt2b1H6okuynx?usp=sharing)).
+> The archive with the checkpoint is also available at [link to Google Drive](https://drive.google.com/drive/folders/1gZL4MaXLi-B4NrK8TgpAt2b1H6okuynx?usp=sharing).
 
 ## 🚀 Launch
 
