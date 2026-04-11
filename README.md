@@ -53,17 +53,20 @@ Developed with **Streamlit**. Features:
 > Screenshots are located in the `screenshots/` folder of the repository.
 
 ## 📦 Repository Structure
-
+```
 ├── train_one.py # Script for SFT on a single dataset
 ├── evaluate.py # Zero-shot / one-shot evaluation
 ├── eval_trained.py # Evaluation of the trained model
+├── evaluate_final.py # Evaluation mix final
 ├── app.py # Streamlit application
 ├── requirements.txt # Dependencies
 ├── README.md # This file
 ├── screenshots/ # Folder with screenshots
-│ ├── upload.png
-│ └── result.png
-└── model_latex_only/ # Checkpoint for the trained model (link to Hugging Face Hub)
+│ ├── load_image.jpg
+│ ├── predict.jpg
+│ └── start_page.jpg
+└── report.md # report about work
+```
 
 ## 🔗 Model Link
 
