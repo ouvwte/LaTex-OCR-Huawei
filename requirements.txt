@@ -1,0 +1,10 @@
+datasets==4.8.4
+matplotlib==3.10.8
+nltk==3.9.4
+peft==0.18.1
+Pillow==12.2.0
+streamlit==1.56.0
+torch==2.11.0+cu128
+tqdm==4.67.3
+transformers==5.5.3
+trl==1.0.0
