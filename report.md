@@ -6,7 +6,7 @@
 - **Retraining Method:** LoRA (PEFT)
 - **Training Hyperparameters:**
 - Number of epochs: 3
-- Batch size (effective): 4 (per_device=1, gradient_accumulation=4)
+- Batch size (effective): per_device=1, gradient_accumulation=4
 - Learning rate: 2e-4
 - Optimizer: AdamW
 - LoRA parameters: r=8, lora_alpha=16, target_modules=q_proj, v_proj, dropout=0.05
@@ -14,24 +14,24 @@
 - **Hardware:** NVIDIA GPU (CUDA) / CPU (if GPU is not available)
 
 - **Training data:** `linxy/LaTeX_OCR` (configuration `small`) – image, LaTeX
-- **Testing data:** 30 examples from the same dataset (`small`)
+- **Testing data:** 50 examples from the same dataset (`small`)
 
 ## 2. Evaluation Results
 
-Metrics calculated on 30 test examples.
+Metrics calculated on 50 test examples.
 
 | Approach | Exact Match (%) | BLEU-4 |
 |--------|----------------|--------|
 | Zero-shot (no training) | 0.00 | 0.2625 |
 | One-shot | 0.00 | 0.1209 |
-| Fine-tuned (SFT on one dataset) | 0.00 | 0.2441 |
+| Fine-tuned (SFT on one dataset) | 0.00 | 0.2544 |
 
 **Conclusions:** 
-- Retraining does not significantly improve recognition quality: BLEU decreased by 0.02. 
+- Retraining does not significantly improve recognition quality: BLEU decreased by 0.01. 
 - Exact Match did not increase from 0%, indicating that the model did not learn to generate correct LaTeX in most cases. 
 - One-shot performed worse than zero-shot, likely due to poor example selection.
 
-## 3. Демонстрация работы приложения
+## 3. Demonstration of the application
 
 Screenshots confirming the functionality of the developed Streamlit application are located in `screenshots/` folder of the repository.
 
@@ -41,5 +41,5 @@ As part of this assignment, we successfully fine-tuned the VLM model for recogni
 
 ## 5. Links
 
-- repository: `https://github.com/ouvwte/LaTex-OCR-Huawei`
+- Repository: `https://github.com/ouvwte/LaTex-OCR-Huawei`
 - Model (checkpoint): `https://huggingface.co/danilb575/Case_10_model`  
