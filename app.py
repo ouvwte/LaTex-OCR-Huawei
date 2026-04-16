@@ -110,7 +110,7 @@ if uploaded_file is not None:
         st.divider()
         
         if pred["valid"]:
-            st.subheader("📜 Recognized LaTeX‑код")
+            st.subheader("📜 Recognized LaTeX-code")
             st.code(pred["latex"], language="latex")
             
             st.subheader("📐 Visualization of the formula")
@@ -175,7 +175,7 @@ with tab2:
     st.dataframe({
         "Метод": ["Zero‑shot", "One‑shot", "Fine‑tuned (SFT)"],
         "Exact Match": ["0.00%", "0.00%", "0.0%"],
-        "BLEU-4": ["0.2625", "0.1209", "0.2441"]
+        "BLEU-4": ["0.2625", "0.1209", "0.2544"]
     }, use_container_width=True)
     st.caption("BLEU is calculated symbol-by-symbol. The fine-tuned model is slightly inferior to the baseline model. " \
                 "This performance is due to the small volume of training data due to hardware limitations.")

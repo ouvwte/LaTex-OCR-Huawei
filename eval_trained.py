@@ -5,6 +5,9 @@ from nltk.translate.bleu_score import sentence_bleu, SmoothingFunction
 import re
 import nltk
 nltk.download('punkt', quiet=True)
+# for reproducibility
+from utils import set_seed
+set_seed(42)
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
 print(f"using: {device}")
@@ -35,7 +38,7 @@ def bleu_score(ref, pred):
     if not ref_t or not pred_t: return 0.0
     return sentence_bleu([ref_t], pred_t, weights=(0.25,0.25,0.25,0.25), smoothing_function=SmoothingFunction().method4)
 
-test_dataset = load_dataset("linxy/LaTeX_OCR", "small", split="train")
+test_dataset = load_dataset("linxy/LaTeX_OCR", "small", split="test")
 prompt = "Convert this handwritten formula to LaTeX code. Output only the LaTeX."
 
 predictions, references = [], []

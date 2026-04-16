@@ -3,6 +3,9 @@ from transformers import AutoProcessor, AutoModelForImageTextToText, TrainingArg
 from peft import LoraConfig, get_peft_model
 from datasets import load_dataset
 from trl import SFTTrainer
+# for reproducibility
+from utils import set_seed
+set_seed(42)
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
 print(f"Using: {device}")

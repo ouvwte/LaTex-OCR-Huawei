@@ -5,9 +5,11 @@ from nltk.translate.bleu_score import sentence_bleu, SmoothingFunction
 import re
 import json
 from tqdm import tqdm
-
 import nltk
 nltk.download('punkt', quiet=True)
+# for reproducibility
+from utils import set_seed
+set_seed(42)
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
 print(f"Using {device}")
@@ -19,7 +21,7 @@ model = AutoModelForImageTextToText.from_pretrained(
     torch_dtype=torch.float16 if device == "cuda" else torch.float32
 ).to(device)
 model.eval()
-print("model is ready succes!")
+print("model is ready success!")
 
 def generate_latex(image, prompt, example_image=None, example_latex=None):
     """
@@ -81,10 +83,9 @@ def bleu_score(ref, pred):
 test_dataset = load_dataset("linxy/LaTeX_OCR", "full", split="test")
 test_dataset = test_dataset.select(range(70))
 # print(f"examples count: {len(test_dataset)}")
-
-train_dataset = load_dataset("linxy/LaTeX_OCR", "full", split="train")
-example_image = train_dataset[0]["image"].convert("RGB")
-example_latex = train_dataset[0]["text"] 
+example_image = test_dataset[0]["image"].convert("RGB")
+example_latex = test_dataset[0]["text"] 
+# train_dataset = load_dataset("linxy/LaTeX_OCR", "full", split="train")
 
 prompt = "Convert this handwritten formula to LaTeX code. Output only the LaTeX."
 
