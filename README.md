@@ -14,13 +14,13 @@ The goal is to further train the Vision-Language model to convert images of hand
 - `target_modules = ["q_proj", "v_proj"]`
 - **Optimizer:** AdamW, learning rate = 2e-4
 - **Number of Epochs:** 3
-- **Batch Size:** 1 (with 4-step gradient accumulation, effective batch = 4)
+- **Batch Size:** 1 
 - **Accuracy:** FP16 (mixed precision)
 
 ## 📊 Data
 
 - **Training dataset:** `linxy/LaTeX_OCR` (configuration `small`)
-- **Test dataset:** 30 examples from `linxy/LaTeX_OCR/small`
+- **Test dataset:** 50 examples from `linxy/LaTeX_OCR/small`
 - **Validation:** Exact Match and BLEU-4 (symbol level) metrics
 
 *The choice of data is dictated by hardware limitations.*
@@ -31,7 +31,7 @@ The goal is to further train the Vision-Language model to convert images of hand
 |-------|----------------|--------|
 | Zero-shot | 0.00% | 0.2625 |
 | One-shot | 0.00% | 0.1209 |
-| Fine-tuned (SFT) | 0.0% | 0.2441 |
+| Fine-tuned (SFT) | 0.0% | 0.2544 |
 
 > SFT even slightly worsened the quality: BLEU dropped slightly compared to zero-shot.
 
@@ -54,6 +54,7 @@ Developed with **Streamlit**. Features:
 
 ## 📦 Repository Structure
 ```
+├── utils.py # Configuration file
 ├── train_one.py # Script for SFT on a single dataset
 ├── evaluate.py # Zero-shot / one-shot evaluation
 ├── eval_trained.py # Evaluation of the trained model
